@@ -1,0 +1,1307 @@
+
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restraunt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <link
+        rel="stylesheet"
+        href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css"
+        />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    
+    *,
+    *::after,
+    *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    }
+    
+    .html {
+    font-size: 62.5%;
+    }
+    
+    body {
+    font-family: "Poppins", sans-serif;
+    }
+    
+    /* ///////////..utility classes../////////// */
+    
+    .container {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+    }
+    
+    .btn {
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1em;
+    text-transform: uppercase;
+    font-weight: small;
+    }
+    
+    .btn-primary {
+    color: #fff;
+    background: #16a083;
+    }
+    
+    .btn-primary:hover {
+    background: #117964;
+    transition: background 0.3s ease-in-out;
+    }
+    
+    /* ............/navbar/............ *
+    
+    /* desktop mode............/// */
+    
+    .navbar input[type="checkbox"],
+    .navbar .hamburger-lines {
+    display: none;
+    }
+    
+    .navbar {
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    color: #000;
+    opacity: 0.85;
+    height: 50px;
+    z-index: 12;
+    }
+    
+    .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+    }
+    
+    .menu-items {
+    order: 2;
+    display: flex;
+    }
+    
+    .menu-items li {
+    list-style: none;
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    }
+    
+    .menu-items a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    }
+    
+    .menu-items a:hover {
+    color: #117964;
+    transition: color 0.3s ease-in-out;
+    }
+    
+    .logo {
+    order: 1;
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+    }
+    
+    /* ............//// Showcase styling ////......... */
+    
+    .showcase-area {
+    height: 100vh;
+    background: linear-gradient(
+    rgba(240, 240, 240, 0.144),
+    rgba(255, 255, 255, 0.336)
+    ),
+    url("https://i.postimg.cc/wT3TQS3V/header-image2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+    
+    .showcase-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 1.6rem;
+    }
+    
+    .main-title {
+    text-transform: uppercase;
+    margin-top: 1.5em;
+    }
+    
+    /* ......//about us//...... */
+    
+    #about {
+    padding: 50px 0;
+    background: #f5f5f7;
+    }
+    
+    .about-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    }
+    
+    #about h2 {
+    font-size: 2.3rem;
+    }
+    
+    #about p {
+    font-size: 1.2rem;
+    color: #555;
+    }
+    
+    #about .small {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 600;
+    }
+    
+    .about-img {
+    flex: 1 1 400px;
+    padding: 30px;
+    transform: translateX(150%);
+    animation: about-img-animation 5s ease-in-out forwards;
+    }
+    
+    @keyframes about-img-animation {
+    100% {
+    transform: translate(0);
+    }
+    }
+    
+    .about-text {
+    flex: 1 1 400px;
+    padding: 30px;
+    margin: auto;
+    transform: translate(-150%);
+    animation: about-text-animation 3s ease-in-out forwards;
+    }
+    
+    @keyframes about-text-animation {
+    100% {
+    transform: translate(0);
+    }
+    }
+    
+    .about-img img {
+    display: block;
+    height: 400px;
+    max-width: 100%;
+    margin: auto;
+    object-fit: cover;
+    object-position: right;
+    }
+    
+    /* ..........////Food category///........... */
+    
+    #food {
+    padding: 5rem 0 10rem 0;
+    }
+    
+    #food h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: #555;
+    }
+    
+    .food-container {
+    display: flex;
+    justify-content: space-between;
+    }
+    
+    .food-container img {
+    display: block;
+    width: 100%;
+    margin: auto;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+    }
+    
+    .img-container {
+    margin: 0 1rem;
+    position: relative;
+    }
+    
+    .img-content {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
+    text-align: center;
+    transition: all 0.3s ease-in-out 0.1s;
+    }
+    
+    .img-content h3 {
+    color: #fff;
+    font-size: 2.2rem;
+    }
+    
+    .img-content a {
+    font-size: 1.2rem;
+    }
+    
+    .img-container::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.871);
+    opacity: 0;
+    z-index: 1;
+    
+    transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transition: all 0.3s ease-in-out;
+    }
+    
+    .img-container:hover::after {
+    opacity: 1;
+    transform: scaleY(1);
+    }
+    
+    .img-container:hover .img-content {
+    opacity: 1;
+    top: 40%;
+    }
+    
+    /* .........../Food Menu/............ */
+    
+    .food-menu-heading {
+    text-align: center;
+    font-size: 3.4rem;
+    font-weight: 400;
+    color: #666;
+    }
+    
+    .food-menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0px 30px 0px;
+    }
+    
+    .food-menu-container img {
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    }
+    
+    .food-menu-item {
+    display: flex;
+    flex: 1 1 600px;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+    }
+    
+    .food-description {
+    margin: auto 1.5rem;
+    }
+    
+    .font-title {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #444;
+    }
+    
+    .food-description p {
+    font-size: 1.4rem;
+    color: #555;
+    font-weight: 500;
+    }
+    
+    .food-description .food-price {
+    color: #117964;
+    font-weight: 700;
+    }
+    
+    /* ........./ Testimonial /.......... */
+    
+    #testimonials {
+    padding: 5rem 0;
+    background: rgba(243, 243, 243);
+    }
+    
+    .testimonial-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: #555;
+    }
+    
+    .testimonial-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    padding: 1rem;
+    }
+    
+    .testimonial-box .checked {
+    color: #ff9529;
+    }
+    
+    .testimonial-box .testimonial-text {
+    margin: 1rem 0;
+    color: #444;
+    }
+    
+    .testimonial-box {
+    text-align: center;
+    padding: 1rem;
+    }
+    
+    .customer-photo img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin: auto;
+    }
+    
+    /* ........ Contact Us........... */
+    
+    #contact {
+    padding: 5rem 0;
+    background: rgb(226, 226, 226);
+    }
+    
+    .contact-container {
+    display: flex;
+    background: #fff;
+    }
+    
+    .contact-img {
+    width: 50%;
+    
+    
+    }
+    
+    .contact-img img {
+    display: block;
+    height: 400px;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+    }
+    
+    .form-container {
+    padding: 1rem;
+    width: 50%;
+    margin: auto;
+    }
+    
+    .form-container input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    padding: 1rem 0;
+    box-shadow: none;
+    outline: none;
+    margin-bottom: 1rem;
+    color: #444;
+    font-weight: 500;
+    }
+    
+    .form-container textarea {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    color: #444;
+    outline: none;
+    padding: 1rem 0;
+    resize: none;
+    }
+    
+    .form-container h2 {
+    font-size: 2.7rem;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 1rem;
+    margin-top: -1.2rem;
+    }
+    
+    .form-container a {
+    font-size: 1.3rem;
+    }
+    
+    #footer h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 2.6rem;
+    font-weight: 500;
+    color: #fff;
+    background: rgb(65, 65, 65);
+    }
+    
+    /* ......../ media query /.......... */
+    
+    @media (max-width: 768px) {
+    .navbar {
+    opacity: 0.95;
+    }
+    
+    .navbar-container input[type="checkbox"],
+    .navbar-container .hamburger-lines {
+    display: block;
+    }
+    
+    .navbar-container {
+    display: block;
+    position: relative;
+    height: 64px;
+    }
+    
+    .navbar-container input[type="checkbox"] {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 30px;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    opacity: 0;
+    }
+    
+    .navbar-container .hamburger-lines {
+    display: block;
+    height: 23px;
+    width: 35px;
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+    
+    .navbar-container .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #333;
+    }
+    
+    .navbar-container .hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+    }
+    
+    .navbar-container .hamburger-lines .line2 {
+    transition: transform 0.2s ease-in-out;
+    }
+    
+    .navbar-container .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+    }
+    
+    .navbar .menu-items {
+    padding-top: 100px;
+    background: #fff;
+    height: 100vh;
+    max-width: 300px;
+    transform: translate(-150%);
+    display: flex;
+    flex-direction: column;
+    margin-left: -40px;
+    padding-left: 50px;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: 5px 0px 10px 0px #aaa;
+    }
+    
+    .navbar .menu-items li {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    }
+    
+    .logo {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 2rem;
+    }
+    
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+    }
+    
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(35deg);
+    }
+    
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+    }
+    
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-35deg);
+    }
+    
+    /* ......./ food /......... */
+    
+    .food-container {
+    flex-direction: column;
+    align-items: stretch;
+    }
+    
+    .food-type:not(:last-child) {
+    margin-bottom: 3rem;
+    }
+    
+    .food-type {
+    box-shadow: 5px 5px 10px 0 #aaa;
+    }
+    
+    .img-container {
+    margin: 0;
+    }
+    }
+    
+    @media (max-width: 500px) {
+    html {
+    font-size: 65%;
+    }
+    
+    .navbar .menu-items li {
+    font-size: 1.6rem;
+    }
+    
+    .testimonial-container {
+    flex-direction: column;
+    text-align: center;
+    }
+    
+    .food-menu-container img {
+    margin: auto;
+    }
+    
+    .food-menu-item {
+    flex-direction: column;
+    text-align: center;
+    }
+    
+    .form-container {
+    width: 90%;
+    }
+    
+    .contact-container {
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .contact-img {
+    width: 90%;
+    margin: 3rem auto;
+    }
+    
+    .logo {
+    position: absolute;
+    top: 06px;
+    right: 15px;
+    font-size: 3rem;
+    }
+    
+    .navbar .menu-items li {
+    margin-bottom: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    }
+    }
+    
+    @media (min-width: 769px) and (max-width: 1200px) {
+    .img-container h3 {
+    font-size: 1.5rem;
+    }
+    
+    .img-container .btn {
+    font-size: 0.7rem;
+    }
+    }
+    
+    @media (orientation: landscape) and (max-height: 500px) {
+    .showcase-area {
+    height: 50vmax;
+    }
+    }
+    /* Wrapper */
+    *{
+    box-sizing: border-box;
+    }
+    body {
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+    
+    .wrapper {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    height: 0vh;
+    }
+    
+    i {
+    padding: 10px 10px;
+    }
+    
+    .wrapper i:nth-child(1) {
+    color: #4867AA;
+    cursor: pointer;
+    text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+    transition: all ease-in-out 150ms;
+    }
+    
+    .wrapper i:nth-child(1):hover {
+    margin-top: -10px;
+    text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
+    transform: translate(0, -8);
+    }
+    
+    .wrapper i:nth-child(2) {
+    color: #1DA1F2;
+    cursor: pointer;
+    text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+    transition: all ease-in-out 150ms;
+    }
+    
+    .wrapper i:nth-child(2):hover {
+    margin-top: -10px;
+    text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
+    transform: translate(0, -8);
+    }
+    
+    .wrapper i:nth-child(3) {
+    color: #444;
+    cursor: pointer;
+    text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    transition: all ease-in-out 150ms;
+    }
+    
+    .wrapper i:nth-child(3):hover {
+    margin-top: -10px;
+    text-shadow: 0px 14px 10px rgba(0, 0, 0, 0.4);
+    transform: translate(0, -5);
+    }
+    .wrapper i:nth-child(4) {
+    color: #fffc00;
+    cursor: pointer;
+    text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+    transition: all ease-in-out 150ms;
+    }
+    .wrapper i:nth-child(4):hover {
+    margin-top: -10px;
+    text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
+    transform: translate(0, -8);
+    }
+    
+   
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#food">Category</a></li>
+                <li><a href="#food-menu">Menu</a></li>
+                <li><a href="#testimonials">Testimonial</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <h1 class="logo">GOOD fôôd</h1>
+        </div>
+    </nav>
+    <section class="showcase-area" id="showcase">
+        <div class="showcase-container">
+            <h1 class="main-title" id="home">Eat Right Food</h1>
+            <p>Eat Healty, it is good for our health.</p>
+            <a href="#food-menu" class="btn btn-primary">Menu</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-wrapper container">
+            <div class="about-text">
+                <p class="small">About Us</p>
+                <h2>We've been making healthy food last for 10 years</h2>
+                <p>
+                    
+                    Welcome to Good Fóód!
+                    
+                    At Good Fóód, we believe that dining is not just about satisfying your hunger; it's about creating a memorable experience. Our restaurant is a haven for food lovers who appreciate exceptional flavors, warm hospitality, and a cozy ambiance.
+                    
+                    Located in the heart of Aligarh, our establishment has been serving the community since 2013. We take pride in offering a diverse menu that showcases the best of local and international cuisines, prepared with a creative touch and the freshest ingredients sourced from trusted suppliers. From succulent steaks to vibrant vegetarian dishes, we cater to a wide range of palates and dietary preferences.
+                    
+                    Our talented team of chefs brings passion and expertise to every dish they create. They strive for culinary excellence, constantly experimenting with new techniques and flavors to bring you a dining experience that is both comforting and innovative. Whether you're joining us for a romantic dinner, a family celebration, or a business meeting, we guarantee a memorable culinary journey.
+                    
+                    In addition to our delectable food, we also offer an extensive selection of fine wines, craft beers, and signature cocktails. Our knowledgeable staff is always on hand to recommend the perfect pairing for your meal, enhancing the flavors and elevating your overall dining experience.
+                    
+                    We understand that exceptional service is the key to a truly remarkable dining experience. Our attentive and friendly staff is dedicated to ensuring that your visit is seamless and enjoyable. We are here to cater to your every need, from providing personalized recommendations to accommodating any dietary restrictions or preferences you may have.
+                    
+                    At Good Fóód, we believe in creating a warm and inviting atmosphere that feels like home. Our stylish yet cozy interior is designed to make you feel comfortable and relaxed, whether you're dining with friends, colleagues, or loved ones. We also offer outdoor seating options for those who prefer to enjoy their meal amidst the beauty of nature.
+                    
+                    We look forward to welcoming you to Good Fóód and providing you with an unforgettable dining experience. Join us and indulge in a symphony of flavors, impeccable service, and a cozy ambiance that will keep you coming back for more.
+                </p>
+            </div>
+            <div class="about-img">
+                <img src="https://i.postimg.cc/mgpwzmx9/about-photo.jpg" alt="food" />
+            </div>
+        </div>
+    </section>
+    <section id="food">
+        <h2>Types of food</h2>
+        <div class="food-container container">
+            <div class="food-type fruite">
+                <div class="img-container">
+                    <img src="https://i.postimg.cc/C5rnKzYg/images-3.jpg" alt="error" />
+                    <div class="img-content">
+                        <h3>Drinks</h3>
+                        <a href="https://en.m.wikipedia.org/wiki/Drink" class="btn btn-primary" target="blank">learn
+                            more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="food-type vegetable">
+                <div class="img-container">
+                    <img src="https://i.postimg.cc/Y0C8VGbK/images-5.jpg" alt="error" />
+                    <div class="img-content">
+                        <h3>Fast Foods</h3>
+                        <a href="https://en.m.wikipedia.org/wiki/Fast_food" class="btn btn-primary" target="blank">learn
+                            more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="food-type grin">
+                <div class="img-container">
+                    <img src="https://i.postimg.cc/nLnm083N/images-7.jpg" alt="error" />
+                    <div class="img-content">
+                        <h3>Indian Thali</h3>
+                        <a href="https://en.m.wikipedia.org/wiki/Thali" class="btn btn-primary" target="blank">learn
+                            more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="food-type south indian">
+            <div class="img-container">
+            <img src="https://i.postimg.cc/ZnDkDhPH/images-11.jpg" alt="error" />
+            <div class="img-content">
+            <h3>South Indian Thali</h3>
+            <a href="https://en.m.wikipedia.org/wiki/Thali" class="btn btn-primary" target="blank">learn
+            more</a>
+        </div>
+    </section>
+    <section id="food-menu">
+        <h2 class="food-menu-heading">Drinks</h2>
+        <div class="food-menu-container container">
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="https://i.postimg.cc/rms2Gmxs/images-12.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Hot coffee</h2>
+                    <p>
+                        I don't drink coffee to wake up. I wake up to drink coffee.
+                    </p>
+                    <p class="food-price">Price: &#8377; 250</p>
+                </div>
+            </div>
+
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="https://i.postimg.cc/QNgvB1Rm/download-1.jpg" alt="error" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Cold Coffee</h2>
+                    <p>
+                        I don't drink coffee to wake up. I wake up to drink coffee.
+                    </p>
+                    <p class="food-price">Price: &#8377; 250</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="https://i.postimg.cc/TwbMNsNv/images-13.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Tea</h2>
+                    <p>
+                        I don't drink tea to wake up. I wake up to drink tea.
+                    </p>
+                    <p class="food-price">Price: &#8377; 250</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="https://i.postimg.cc/Z5366Tcr/images-15.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Water</h2>
+                    <p>
+                        Water is the most important element of planet earth as it supports life. Without water, no one can survive in the entire world.
+                    </p>
+                    <p class="food-price">Price: &#8377; 20</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="https://i.postimg.cc/XYQQDfmV/images-16.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Lime Juice</h2>
+                    <p>
+                        It's a basically called summer's juice.
+                    </p>
+                    <p class="food-price">Price: &#8377; 250</p>
+                </div>
+            </div>
+            <div class="food-menu-item">
+                <div class="food-img">
+                    <img src="https://i.postimg.cc/rpYcct0T/images-17.jpg" alt="" />
+                </div>
+                <div class="food-description">
+                    <h2 class="food-titile">Mocktail</h2>
+                    <p>
+                        Mocktail is a mixed juice.
+                    </p>
+                    <p class="food-price">Price: &#8377; 200</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="food-menu">
+    <h2 class="food-menu-heading">South Indian</h2>
+    <div class="food-menu-container container">
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/kGSQPC0T/images-30.jpg" alt="" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">Idli</h2>
+    <p>
+    Idli is calling you.
+    </p>
+    <p class="food-price">Price: &#8377; 150</p>
+    </div>
+    </div>
+    
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/T2j1FhSZ/1200px-Indian-Sambar.jpg" alt="error" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">sambhar</h2>
+    <p>
+    sambhar is delicious dish.
+    </p>
+    <p class="food-price">Price: &#8377; 350</p>
+    </div>
+    </div>
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/MHLFdzyt/images-31.jpg" alt="" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">Dosa</h2>
+    <p>
+    Dosa is good food.
+    </p>
+    <p class="food-price">Price: &#8377; 250</p>
+    </div>
+    </div>
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/rsT1T3qc/images-32.jpg" alt="" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">wada</h2>
+    <p>
+    pieces of potatoes.
+    </p>
+    <p class="food-price">Price: &#8377; 150</p>
+    </div>
+    </div>
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/L47qjGcs/images-33.jpg" alt="" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">Pav Bhaji</h2>
+    <p>
+    Is's a combination of bread & bhaji.
+    </p>
+    <p class="food-price">Price: &#8377; 150</p>
+    </div>
+    </div>
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/NG4tcX4v/images-34.jpg" alt="" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">Tikki</h2>
+    <p>
+    It's a chinees food.
+    </p>
+    <p class="food-price">Price: &#8377; 250</p>
+    </div>
+    </div>
+    </div>
+    </section>
+    
+    <section id="food-menu">
+    <h2 class="food-menu-heading">Fast Foods</h2>
+    <div class="food-menu-container container">
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/J07zzW7V/images-18.jpg" alt="" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">Burger</h2>
+    <p>
+    Mr buger is calling you.
+    </p>
+    <p class="food-price">Price: &#8377; 150</p>
+    </div>
+    </div>
+    
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/cJYRQfR1/images-19.jpg" alt="error" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">Pizza</h2>
+    <p>
+    Pizza is delicious dish.
+    </p>
+    <p class="food-price">Price: &#8377; 350</p>
+    </div>
+    </div>
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/C1czDKQL/images-20.jpg" alt="" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">Chowmein</h2>
+    <p>
+    That's a chinees food it's look like maggi.
+    </p>
+    <p class="food-price">Price: &#8377; 250</p>
+    </div>
+    </div>
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/MGTTwwGC/images-21.jpg" alt="" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">French Fries</h2>
+    <p>
+    pieces of potatoes.
+    </p>
+    <p class="food-price">Price: &#8377; 150</p>
+    </div>
+    </div>
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/wM3cRZFZ/images-22.jpg" alt="" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">Spring roll</h2>
+    <p>
+    Is's a combination of vegitables & indian roti.
+    </p>
+    <p class="food-price">Price: &#8377; 150</p>
+    </div>
+    </div>
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/505LY1ws/images-23.jpg" alt="" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">Momos</h2>
+    <p>
+    It's a chinees food.
+    </p>
+    <p class="food-price">Price: &#8377; 250</p>
+    </div>
+    </div>
+    </div>
+    </section>
+    <section id="food-menu">
+    <h2 class="food-menu-heading">Indian Food</h2>
+    <div class="food-menu-container container">
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/ZR96TgHq/images-24.jpg" alt="" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">Sahi Paneer</h2>
+    <p>
+    shahi paneer is a indian food.
+    </p>
+    <p class="food-price">Price: &#8377; 350</p>
+    </div>
+    </div>
+    
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/sgXxdWwj/images-25.jpg" alt="error" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">Dal Makhani</h2>
+    <p>
+    Dal Makhani is a indian food.
+    </p>
+    <p class="food-price">Price: &#8377; 350</p>
+    </div>
+    </div>
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/mrfvNfcv/images-26.jpg" alt="" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">Rice</h2>
+    <p>
+    Rice is in the indian food catagories.
+    </p>
+    <p class="food-price">Price: &#8377; 250</p>
+    </div>
+    </div>
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/nrgRFBBy/images-27.jpg" alt="" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">Tanduri Roti</h2>
+    <p>
+    It's not a tawa roti it's tanduri roti with butter.
+    </p>
+    <p class="food-price">Price: &#8377; 15</p>
+    </div>
+    </div>
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/sXF0CpPb/images-28.jpg" alt="" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">Chole</h2>
+    <p>
+    chlole is high protin grain food.
+    </p>
+    <p class="food-price">Price: &#8377; 150</p>
+    </div>
+    </div>
+    <div class="food-menu-item">
+    <div class="food-img">
+    <img src="https://i.postimg.cc/VL594Jnt/images-29.jpg" alt="" />
+    </div>
+    <div class="food-description">
+    <h2 class="food-titile">Puri</h2>
+    <p>
+    
+    </p>
+    <p class="food-price">Price: &#8377; 10</p>
+    </div>
+    </div>
+    </div>
+    </section>
+    <section id="testimonials">
+        <h2 class="testimonial-title">What Our Customers Say</h2>
+        <div class="testimonial-container container">
+            <div class="testimonial-box">
+                <div class="customer-detail">
+                    <div class="customer-photo">
+                        <img src="https://i.postimg.cc/WtRZw5xN/ankush-minda-u-PIDt-Od-CINY-unsplash.jpg" alt="" />
+                        <p class="customer-name">Ankush Minda</p>
+                    </div>
+                </div>
+                <div class="star-rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+                <p class="testimonial-text">
+                    That's a good restaurant & service is very fast food quality is nice.Restaurant staff was very nice & Restaurant sitting place good.
+                    
+                </p>
+
+            </div>
+            <div class="testimonial-box">
+                <div class="customer-detail">
+                    <div class="customer-photo">
+                        <img src="https://i.postimg.cc/fLGFYNWJ/jayant-dassz-u08-NEYUYvig-unsplash.jpg" alt="" />
+                        <p class="customer-name">Jayanti Das</p>
+                    </div>
+                </div>
+                <div class="star-rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+                <p class="testimonial-text">
+                    That's a good restaurant & service is very fast food quality is nice.Restaurant staff was very nice & Restaurant sitting place good.
+                    
+                </p>
+
+            </div>
+            <div class="testimonial-box">
+                <div class="customer-detail">
+                    <div class="customer-photo">
+                        <img src="https://i.postimg.cc/fy90qvkV/male-photo3.jpg" alt="" />
+                        <p class="customer-name">Ben Roy</p>
+                    </div>
+                </div>
+                <div class="star-rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+                <p class="testimonial-text">
+                    That's a good restaurant & service is very fast food quality is nice.Restaurant staff was very nice & Restaurant sitting place good.
+                    
+                </p>
+
+            </div>
+            <div class="testimonial-box">
+            <div class="customer-detail">
+            <div class="customer-photo">
+            <img src="https://i.postimg.cc/8kndKHLm/sonu-agvan-y-UNeh-BYy-DRQ-unsplash.jpg" alt="" />
+            <p class="customer-name">Sonu Agvan</p>
+            </div>
+            </div>
+            <div class="star-rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            </div>
+            <p class="testimonial-text">
+            That's a good restaurant & service is very fast food quality is nice.Restaurant staff was very nice & Restaurant sitting place good.
+            
+            </p>
+            
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="contact-container container">
+            <div class="contact-img">
+                <img src="https://i.postimg.cc/1XvYM67V/restraunt2.jpg" alt="" />
+            </div>
+
+            <div class="form-container">
+                <h2>Contact Us</h2>
+                <input type="text" placeholder="Your Name" />
+                <input type="email" placeholder="E-Mail" />
+                <textarea cols="30" rows="6" placeholder="Type Your Message"></textarea>
+                <a href="#" class="btn btn-primary">Submit</a>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+    
+    <div class="wrapper">
+    
+    <a href="https://www.facebook.com/virendra.mathur.58"> <i class="fa fa-5x fa-facebook-square"></i></a>
+    <a href="https://www.linkedin.com/in/virendra-mathur-aa03a1248"><i class="fa fa-5x fa-linkedin-square"></i></a>
+    <a href="<link rel="stylesheet" href="https://www.snapchat.com/add/virendra_557?share_id=fwcK0W-9KMk&locale=en-IN">" ><i class="fa fa-5x fa-snapchat-square"></i></a>
+    </div>
+    
+    
+        <h2>Restraunt &copy; all rights reserved</h2>
+        
+    </footer>
+    <!-- .................../ JS Code for smooth scrolling /...................... -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+    $(document).ready(function () {
+    // Add smooth scrolling to all links
+    $("a").on("click", function (event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+    // Prevent default anchor click behavior
+    event.preventDefault();
+    
+    // Store hash
+    var hash = this.hash;
+    
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+    $("html, body").animate(
+    {
+    scrollTop: $(hash).offset().top,
+    },
+    800,
+    function () {
+    // Add hash (#) to URL when done scrolling (default click behavior)
+    window.location.hash = hash;
+    }
+    );
+    } // End if
+    });
+    });
+    </script>
+
+</html>
+
+</body>
+
+</html>
